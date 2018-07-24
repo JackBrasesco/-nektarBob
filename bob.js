@@ -11,31 +11,7 @@ var chatList = []
 var dmButton = $("#dm-button")
 var clicker = $("#clicker")
 
-var hue = jsHue();
-var bridge = hue.bridge('10.0.0.3');
-var user = bridge.user("SLNNqvOYSKUZLfDIMpmI9oz0ZAD2R7n0UAyZ1Lhi")
 
-var light1 = {
-  "on": false,
-}
-var light2 = {
-  "on": false,
-}
-var light3 = {
-  "on": false,
-}
-
-
-
-
-//USELESS BUT STILL HERE FOR NO REASON///////////////////////////
-var sourceSong = $("#songSource");
-var currentSong = $("#currentSong")
-////////////////////////////////////////////////////////////////
-
-dmButton.click(function() {
-  output.html("hi")
-})
 // MINIGAMES!!!!! ------------------------------------------------------------------------------------------------------------------------
 //CLICKER \/\/\/\///\\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
 clicker.click(function() {
@@ -100,7 +76,6 @@ clicker.click(function() {
     },500)
   }
 })
-// SNAKE \/\/\//\/\/\/\/\/\/\//\/\/\/\/\/\/\/\/\/\/\/\//\\/\/\/\\/\/\/\/\/\/\/\/\/\/\/
 //SIGN UP ((((((((((((((((((((((((((((((((((()))))))))))))))))))))))))))))))))))
 var signUpUsernameInput = $("#sign-up-username-input");
 var signUpPassword1Input = $("#sign-up-password-1-input");
@@ -331,287 +306,6 @@ function bob(entry) {
       }
     },400)
     }
-  //LIGHTS--------------------------------------------------------------------
-  function light1Change(command) {
-    user.setLightState(1, command).then(data => {
-      console.log("lights have been changed");
-  });
-}
-function light2Change(command) {
-  user.setLightState(2, command).then(data => {
-    console.log("lights have been changed");
-});
-}
-function light3Change(command) {
-  user.setLightState(3, command).then(data => {
-    console.log("lights have been changed");
-});
-}
-  function lightsChange(e) {
-    user.setLightState(3, e).then(data => {
-      console.log("lights have been changed");
-  });
-    user.setLightState(2, e).then(data => {
-      console.log("lights have been changed");
-  });
-    user.setLightState(1, e).then(data => {
-      console.log("lights have been changed");
-  });
-  }
-
-  var isLights = entry.indexOf(" lights")
-  if (isLights > -1) {
-    var commands = {
-      "on": { on: true },
-      "off": { on: false },
-      "colorRed": { hue: 65280},
-      "colorBlue": { hue: 46920},
-      "colorYellow": { hue: 12750},
-      "colorGreen": { hue: 25500},
-      "colorPink": { hue: 56100},
-      "loop": { effect: 'colorloop'},
-      "static": { effect: 'none'}
-    }
-    var isLightsOn =     entry.indexOf(" on")
-    var isLightsOff =    entry.indexOf(" off")
-    var isLightsLoop =   entry.indexOf(" loop")
-    var isLightsRed =    entry.indexOf(" red")
-    var isLightsBlue =   entry.indexOf(" blue")
-    var isLightsYellow = entry.indexOf(" yellow")
-    var isLightsGreen =  entry.indexOf(" green")
-    var isLightsPink =   entry.indexOf(" pink")
-    var isLightsStatic = entry.indexOf(" static")
-    if (isLightsOn > -1) {
-      lightsChange(commands.on)
-    }
-    if (isLightsOff > -1) {
-      lightsChange(commands.off)
-    }
-    if (isLightsRed > -1) {
-      lightsChange(commands.colorRed)
-    }
-    if (isLightsBlue > -1) {
-      lightsChange(commands.colorBlue)
-    }
-    if (isLightsYellow > -1) {
-      lightsChange(commands.colorYellow)
-    }
-    if (isLightsGreen > -1) {
-      lightsChange(commands.colorGreen)
-    }
-    if (isLightsPink > -1) {
-      lightsChange(commands.colorPink)
-    }
-    if (isLightsLoop > -1) {
-      lightsChange(commands.loop)
-    }
-    if (isLightsOn > -1) {
-      lightsChange(commands.static)
-    }
-  }
-  var isLight = entry.indexOf(" light")
-  if (isLight > -1) {
-    var commands = {
-      "on": { on: true },
-      "off": { on: false },
-      "colorRed": { hue: 65280},
-      "colorBlue": { hue: 46920},
-      "colorYellow": { hue: 12750},
-      "colorGreen": { hue: 25500},
-      "colorPink": { hue: 56100},
-      "loop": { effect: 'colorloop'},
-      "static": { effect: 'none'}
-    }
-    var isLight1 = entry.indexOf(" 1");
-    var isLight2 = entry.indexOf(" 2");
-    var isLight3 = entry.indexOf(" 3");
-    var isLightMain = entry.indexOf(" main ")
-    if (isLight1 > -1) {
-      var isLightsOn =     entry.indexOf(" on")
-      var isLightsOff =    entry.indexOf(" off")
-      var isLightsLoop =   entry.indexOf(" loop")
-      var isLightsRed =    entry.indexOf(" red")
-      var isLightsBlue =   entry.indexOf(" blue")
-      var isLightsYellow = entry.indexOf(" yellow")
-      var isLightsGreen =  entry.indexOf(" green")
-      var isLightsPink =   entry.indexOf(" pink")
-      var isLightsStatic = entry.indexOf(" static")
-      if (isLightsOn > -1) {
-        light1Change(commands.on)
-      }
-      if (isLightsOff > -1) {
-        light1Change(commands.off)
-      }
-      if (isLightsRed > -1) {
-        light1Change(commands.colorRed)
-      }
-      if (isLightsBlue > -1) {
-        light1Change(commands.colorBlue)
-      }
-      if (isLightsYellow > -1) {
-        light1Change(commands.colorYellow)
-      }
-      if (isLightsGreen > -1) {
-        light1Change(commands.colorGreen)
-      }
-      if (isLightsPink > -1) {
-        light1Change(commands.colorPink)
-      }
-      if (isLightsLoop > -1) {
-        light1Change(commands.loop)
-      }
-      if (isLightsOn > -1) {
-        light1Change(commands.static)
-      }
-    }
-    if (isLight2 > -1) {
-      var commands = {
-        "on": { on: true },
-        "off": { on: false },
-        "colorRed": { hue: 65280},
-        "colorBlue": { hue: 46920},
-        "colorYellow": { hue: 12750},
-        "colorGreen": { hue: 25500},
-        "colorPink": { hue: 56100},
-        "loop": { effect: 'colorloop'},
-        "static": { effect: 'none'}
-      }
-      var isLightsOn =     entry.indexOf(" on")
-      var isLightsOff =    entry.indexOf(" off")
-      var isLightsLoop =   entry.indexOf(" loop")
-      var isLightsRed =    entry.indexOf(" red")
-      var isLightsBlue =   entry.indexOf(" blue")
-      var isLightsYellow = entry.indexOf(" yellow")
-      var isLightsGreen =  entry.indexOf(" green")
-      var isLightsPink =   entry.indexOf(" pink")
-      var isLightsStatic = entry.indexOf(" static")
-      if (isLightsOn > -1) {
-        light2Change(commands.on)
-      }
-      if (isLightsOff > -1) {
-        light2Change(commands.off)
-      }
-      if (isLightsRed > -1) {
-        light2Change(commands.colorRed)
-      }
-      if (isLightsBlue > -1) {
-        light2Change(commands.colorBlue)
-      }
-      if (isLightsYellow > -1) {
-        light2Change(commands.colorYellow)
-      }
-      if (isLightsGreen > -1) {
-        light2Change(commands.colorGreen)
-      }
-      if (isLightsPink > -1) {
-        light2Change(commands.colorPink)
-      }
-      if (isLightsLoop > -1) {
-        light2Change(commands.loop)
-      }
-      if (isLightsOn > -1) {
-        light2Change(commands.static)
-      }
-    }
-    if (isLight3 > -1) {
-      var commands = {
-        "on": { on: true },
-        "off": { on: false },
-        "colorRed": { hue: 65280},
-        "colorBlue": { hue: 46920},
-        "colorYellow": { hue: 12750},
-        "colorGreen": { hue: 25500},
-        "colorPink": { hue: 56100},
-        "loop": { effect: 'colorloop'},
-        "static": { effect: 'none'}
-      }
-      var isLightsOn =     entry.indexOf(" on")
-      var isLightsOff =    entry.indexOf(" off")
-      var isLightsLoop =   entry.indexOf(" loop")
-      var isLightsRed =    entry.indexOf(" red")
-      var isLightsBlue =   entry.indexOf(" blue")
-      var isLightsYellow = entry.indexOf(" yellow")
-      var isLightsGreen =  entry.indexOf(" green")
-      var isLightsPink =   entry.indexOf(" pink")
-      var isLightsStatic = entry.indexOf(" static")
-      if (isLightsOn > -1) {
-        light3Change(commands.on)
-      }
-      if (isLightsOff > -1) {
-        light3Change(commands.off)
-      }
-      if (isLightsRed > -1) {
-        light3Change(commands.colorRed)
-      }
-      if (isLightsBlue > -1) {
-        light3Change(commands.colorBlue)
-      }
-      if (isLightsYellow > -1) {
-        light3Change(commands.colorYellow)
-      }
-      if (isLightsGreen > -1) {
-        light3Change(commands.colorGreen)
-      }
-      if (isLightsPink > -1) {
-        light3Change(commands.colorPink)
-      }
-      if (isLightsLoop > -1) {
-        light3Change(commands.loop)
-      }
-      if (isLightsOn > -1) {
-        light3Change(commands.static)
-      }
-    }
-    if (isLightMain > -1) {
-      var commands = {
-        "on": { on: true },
-        "off": { on: false },
-        "colorRed": { hue: 65280},
-        "colorBlue": { hue: 46920},
-        "colorYellow": { hue: 12750},
-        "colorGreen": { hue: 25500},
-        "colorPink": { hue: 56100},
-        "loop": { effect: 'colorloop'},
-        "static": { effect: 'none'}
-      }
-      var isLightsOn =     entry.indexOf(" on")
-      var isLightsOff =    entry.indexOf(" off")
-      var isLightsLoop =   entry.indexOf(" loop")
-      var isLightsRed =    entry.indexOf(" red")
-      var isLightsBlue =   entry.indexOf(" blue")
-      var isLightsYellow = entry.indexOf(" yellow")
-      var isLightsGreen =  entry.indexOf(" green")
-      var isLightsPink =   entry.indexOf(" pink")
-      var isLightsStatic = entry.indexOf(" static")
-      if (isLightsOn > -1) {
-        light3Change(commands.on)
-      }
-      if (isLightsOff > -1) {
-        light3Change(commands.off)
-      }
-      if (isLightsRed > -1) {
-        light3Change(commands.colorRed)
-      }
-      if (isLightsBlue > -1) {
-        light3Change(commands.colorBlue)
-      }
-      if (isLightsYellow > -1) {
-        light3Change(commands.colorYellow)
-      }
-      if (isLightsGreen > -1) {
-        light3Change(commands.colorGreen)
-      }
-      if (isLightsPink > -1) {
-        light3Change(commands.colorPink)
-      }
-      if (isLightsLoop > -1) {
-        light3Change(commands.loop)
-      }
-      if (isLightsOn > -1) {
-        light3Change(commands.static)
-      }
-    }
-  }
   //CHAT----------------------------------------------------------------------
   var isOpen = entry.indexOf(" open chat")
   if (isOpen > -1) {
@@ -632,12 +326,13 @@ function light3Change(command) {
       output.html(changeThis + " will now read as this " + toThis)
     })
   }
-  //LOOKUP -------------------------------------------------------------------
   var isResetClicker = entry.indexOf(" reset clicker ")
   if (isResetClicker > -1) {
     clicker.css("left",0);
     clicker.css("top",0);
   }
+  //LOOKUP -------------------------------------------------------------------
+
   var isLookup = entry.indexOf(" lookup ");
   var isLookkUp = entry.indexOf(" look up ");
   if (isLookup > -1) {
@@ -933,6 +628,12 @@ function light3Change(command) {
     },500)
     return "lmao got eeeem"
   }
+  var isTest = entry.indexOf(" test")
+  if (isTest > -1) {
+    output.html("working")
+    var bobTalks= new Audio("Audio/HeyThere.mp3")
+    return
+  }
   //GO TO ----------------------------------------------------------------------
   var isGoTo = entry.indexOf(" go to ");
   if (isGoTo > -1) {
@@ -947,34 +648,17 @@ function light3Change(command) {
       openInNewTab("https://jackbrasesco.github.io/chat")
       return
     }
-    if (place_to_go == "schedule") {
-      var bobTalks = new Audio("Audio/GoingToSchedule.mp3")
-      bobTalks.play()
-      openInNewTab("https://docs.google.com/spreadsheets/d/1x_TrA0pXxfy17RbSAbw-myCG8bj41esXwRkxIH6vvHA/edit#gid=12876729")
-
-      return
+    if (place_to_go == "kronos") {
+      openInNewTab("http://sfmb151.nektar.com/wfc/navigator/logon")
     }
-    if (place_to_go == "the schedule") {
-      var bobTalks = new Audio("Audio/GoingToSchedule.mp3")
-      bobTalks.play()
-      openInNewTab("https://docs.google.com/spreadsheets/d/1x_TrA0pXxfy17RbSAbw-myCG8bj41esXwRkxIH6vvHA/edit#gid=12876729")
-      return
+    if (place_to_go == "footprints") {
+      openInNewTab("http://sfmb099.nektar.com/MRcgi/MRhomepage.pl?USER=jbrasesco&PROJECTID=2&MRP=9LIFqdo3&OPTION=none&WRITECACHE=1&FIRST_TIME_IN_FP=1&FIRST_TIME_IN_PROJ=1&")
     }
-    if (place_to_go == "canvas") {
-      var bobTalks = new Audio("Audio/GoingToCanvas.mp3")
-      bobTalks.play()
-      openInNewTab("https://nuevaschool.instructure.com/calendar")
-      return "cool stuff"
+    if(place_to_go == "nectar net") {
+      openInNewTab("http://nektarnet/MBR/default.aspx")
     }
-    if (place_to_go == "english") {
-      openInNewTab("https://nuevaschool.instructure.com/courses/940")
-      return "chris is a baller"
-    }
-    if (place_to_go == "history") {
-      openInNewTab("https://nuevaschool.instructure.com/courses/933")
-    }
-    if (place_to_go == "math") {
-      openInNewTab("https://nuevaschool.instructure.com/courses/890")
+    if (place_to_go == "map") {
+      openInNewTab("https://nektar.officespacesoftware.com/visual-directory/floors/8")
     }
     if (place_to_go == "drive") {
       var bobTalks = new Audio("Audio/GoingToDrive.mp3")
@@ -1011,14 +695,14 @@ function light3Change(command) {
     if (isMyemail > -1) {
       var bobTalks = new Audio("Audio/CheckEmail.mp3")
       bobTalks.play()
-      openInNewTab("https://mail.google.com");
+      openInNewTab("https://mail.nektar.com/owa/");
       return "done!"
     }
     var isEmail = entry.indexOf(" email")
     if (isEmail > -1) {
       var bobTalks = new Audio("Audio/CheckEmail.mp3")
       bobTalks.play()
-      openInNewTab("https://mail.google.com")
+      openInNewTab("https://mail.nektar.com/owa/")
     }
   }
   //PLAY MUSIC -----------------------------------------------------------------
@@ -1543,4 +1227,3 @@ onNewListItem("chat", function(r) {
   var limit = chatList.slice(chatList.length - 9, chatList.length)
   chat.html(limit.join("<br>"))
 })
-
