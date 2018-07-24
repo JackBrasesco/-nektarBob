@@ -1,2 +1,1 @@
-# -nektarBob
-Bob but for Nektar
+# bob

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.0.4/firebase.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="bob.css" />
+    <title> Bot Bob </title>
+  </head>
+  <body>
+    <audio id="currentSong">
+      <source id="songSource" src="pokemon.mp3" type="audio/mpeg" />
+    </audio>
+    <canvas id="snake-canvas"></canvas>
+    <h1 id="main-title"> FUN WITH BOT BOB 4.0 </h1>
+    <div id="clicker"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4">
+          <img id="bob-main-img" src="bob.jpg" />
+        </div>
+        <div class="col-lg-4"></div>
+      </div>
+      <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10" id="main-text-field">
+          <div id="chat-box">
+            <div id="exit-chat-button"></div>
+          </div>
+          <div id="main-output">
+          </div>
+          <input type="text" id="main-input-field" placeholder="    Ask me anything . . ." />
+        </div>
+        <div class="col-lg-1"></div>
+      </div>
+      <div class="row">
+        <div class="col-10-lg" id="button-holder">
+          <a id="help-button" class="btn btm-btn" href="https://jackbrasesco.github.io/bob/help.html"> Help </a>
+          <a  id="sign-in-button" class="btn btm-btn" href="https://jackbrasesco.github.io/bob/sign.html"> Sign In </a>
+          <a id="circulus-button" class="btn btm-btn" href="https://jackbrasesco.github.io/bob/circulus.html"> Circulus </a>
+        </div>
+    </div>
+    <script src="jshue.js"></script>
+    <script src="firebase-config.js"></script>
+
+    <script src="bob.js"></script>
+  </body>
+</html>
