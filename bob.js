@@ -651,6 +651,9 @@ function bob(entry) {
     if (place_to_go == "kronos") {
       openInNewTab("http://sfmb151.nektar.com/wfc/navigator/logon")
     }
+    if (place_to_go == "compliance wire") {
+      openInNewTab("https://www.compliancewire.com/CW3/Standard/ToDo")
+    }
     if (place_to_go == "footprints") {
       openInNewTab("http://sfmb099.nektar.com/MRcgi/MRhomepage.pl?USER=jbrasesco&PROJECTID=2&MRP=9LIFqdo3&OPTION=none&WRITECACHE=1&FIRST_TIME_IN_FP=1&FIRST_TIME_IN_PROJ=1&")
     }
