@@ -1,4 +1,4 @@
-//Copyright (c) 2016 Jack Brasesco All Rights Reserved.
+//Copyright (c) 2018 Jack Brasesco All Rights Reserved.
 
 var inputbox = $("#main-input-field");
 var output = $("#main-output");
