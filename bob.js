@@ -650,18 +650,23 @@ function bob(entry) {
     }
     if (place_to_go == "kronos") {
       openInNewTab("http://sfmb151.nektar.com/wfc/navigator/logon")
+      return
     }
     if (place_to_go == "compliance wire") {
       openInNewTab("https://www.compliancewire.com/CW3/Standard/ToDo")
+      return
     }
     if (place_to_go == "footprints") {
       openInNewTab("http://sfmb099.nektar.com/MRcgi/MRhomepage.pl?USER=jbrasesco&PROJECTID=2&MRP=9LIFqdo3&OPTION=none&WRITECACHE=1&FIRST_TIME_IN_FP=1&FIRST_TIME_IN_PROJ=1&")
+      return
     }
     if(place_to_go == "nectar net") {
       openInNewTab("http://nektarnet/MBR/default.aspx")
+      return
     }
     if (place_to_go == "map") {
       openInNewTab("https://nektar.officespacesoftware.com/visual-directory/floors/8")
+      return
     }
     if (place_to_go == "drive") {
       var bobTalks = new Audio("Audio/GoingToDrive.mp3")
